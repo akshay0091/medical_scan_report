@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/kidney.css' %}" />
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="content">
+    <div class="testback">
+        <div class="main">
+            <div class="text_input">
+                <h1 id="heading">
+                    Kidney Stone And Cancer Checking
+                </h1>
+                <div class="container text-center text p-5">
+                    <p id="test">You have to uplod the <a href="https://en.wikipedia.org/wiki/CT_scan">Computed
+                            tomography(CT)</a>
+                        scans .CT scans of the kidneys are useful in the examination of one or both of the kidneys to
+                        detect
+                        conditions such as tumors or other lesions, obstructive conditions, such as kidney stones,
+                        congenital anomalies, polycystic kidney disease, accumulation of fluid around the kidneys, and
+                        the location of abscesses.
+                    </p>
+                    <br>
+                    <p id="test">
+                        Other related procedures that may be used to diagnose kidney problems include <a
+                            href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/kidney-ureter-and-bladder-xray">KUB
+                            X-rays</a> ,
+                        <a href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/kidney-biopsy">kidney
+                            biopsy</a> ,<a
+                            href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/kidney-scan">kidney
+                            scan </a> ,<a
+                            href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/kidney-ultrasound">kidney
+                            ultrasound</a> ,<a
+                            href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/renal-angiogram">
+                            renal angiogram</a> , and <a
+                            href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/renal-venogram">renal
+                            venogram</a> .
+                    </p>
+                    <div class="text-center p-5">
+                        <form action="{% url 'kidney_result' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.image }}
+                            {{ from.as_p }}
+                            <label for="formFileLg" class="form-label" id="up_text">Upload the CT scan file</label>
+                            <input class="form-control form-control-lg" id="formFileLg" name="kidneyfile" type="file">
+                            <button type="submit" value="Upload">Submit</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {% endblock content %}

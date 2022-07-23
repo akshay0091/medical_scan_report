@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/pnemonia.css' %}" />
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="content">
+    <div class="testback">
+        <div class="main">
+            <div class="text_input">
+                <h1 id="heading">
+                    Pnemonia Checking
+                </h1>
+                <div class="container text-center text p-5">
+                    <p id="test">You have to uplod the <a href="https://en.wikipedia.org/wiki/X-ray">X
+                            -ray</a>
+                        .X-ray of the chest are useful in the examination of Pnemonia.
+
+                        With pneumonia, the air sacs may fill with fluid or pus. The infection can be life-threatening
+                        to anyone, but particularly to infants, children and people over 65.
+                        Symptoms include a cough with phlegm or pus, fever, chills and difficulty breathing..
+                    </p>
+                    <br>
+                    <p id="test">
+                        Other related procedures that may be used to diagnose Pnemonia problems include Blood tests,<a
+                            href="https://www.hopkinsmedicine.org/health/treatment-tests-and-therapies/pulse-oximetry">Pulse
+                            oximetry</a> ,<a
+                            href="https://www.mercy.com/health-care-services/cancer-care-oncology/specialties/lung-cancer-treatment/treatments/sputum-test#:~:text=A%20sputum%20test%2C%20also%20known,in%20the%20lungs%20or%20bronchi.">Sputum
+                            test</a> .
+                        ,
+
+                    </p>
+                    <div class="text-center p-5">
+                        <form action="{% url 'pnemonia_result' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.image }}
+                            {{ from.as_p }}
+                            <label for="formFileLg" class="form-label" id="up_text">Upload the X-ray file</label>
+                            <input class="form-control form-control-lg" id="formFileLg" name="pnemoniafile" type="file">
+                            <button type="submit" value="Upload">Submit</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {% endblock content %}

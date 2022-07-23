@@ -1,0 +1,17 @@
+#heading{
+    color: #000;
+    font-size: 70px;
+    padding-left: 10%;
+    padding-top: 50px;
+    font-weight: bold;
+}
+#test{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    padding-left: 100px;
+    padding-right: 100px;
+}
+#up_text{
+    color: rgb(101, 235, 105);
+    font-size: 40px;
+}

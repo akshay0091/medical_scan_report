@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/skincan.css' %}" />
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="content">
+    <div class="testback">
+        <div class="main">
+            <div class="text_input">
+                <h1 id="heading">
+                    Skin Cancer Checking
+                </h1>
+                <div class="container text-center text p-5">
+                    <p id="test">You have to uplod the Skin image
+                        .Image of the skin are useful in the examination of Skin Cancer.
+                        Artificial Intelligent may look at your skin image to determine whether your skin
+                        changes are likely to be skin cancer. Further testing may be needed to confirm that diagnosis.
+                    </p>
+                    <br>
+                    <p id="test">
+                        The procedure that your <a href="https://en.wikipedia.org/wiki/Dermatology">dermatologist</a>
+                        uses to remove the spot is called a skin biopsy. Having a
+                        <a href="https://en.wikipedia.org/wiki/Skin_biopsy">skin biopsy</a> is essential. It's the only
+                        way to know whether you have skin cancer.
+                    </p>
+                    <div class="text-center p-5">
+                        <form action="{% url 'skin_result' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.image }}
+                            {{ from.as_p }}
+                            <label for="formFileLg" class="form-label" id="up_text">Upload the Image file</label>
+                            <input class="form-control form-control-lg" id="formFileLg" name="skinfile" type="file">
+                            <button type="submit" value="Upload">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {% endblock content %}

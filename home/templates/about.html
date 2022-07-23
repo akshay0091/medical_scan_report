@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/about.css' %}" />
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="content">
+    <div class="testback">
+      <div class="main">
+        <div class="text_input">
+          <h1 id="heading">
+             About
+          </h1>
+            <div class="container text-center text p-5">
+                <p id="test">Artificially intelligent computer systems are used extensively 
+                    in medical sciences. Common applications include diagnosing patients, 
+                    end-to-end drug discovery and development, improving communication between
+                     physician and patient, transcribing medical documents,
+                     such as prescriptions, and remotely treating patients.</p>
+                     <br>
+                     <p id="test">
+                        In this project patients and docter can check patient is
+                         in illness or not and take futher checkup immediately.This project help
+                         mainly docters
+                     </p>
+            </div>
+        </div>
+  
+      </div>
+    </div>
+
+
+{% endblock content %}

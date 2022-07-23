@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/test.css' %}" />
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="content">
+    <div class="testback">
+      <div class="main">
+        <div class="text_input">
+          <h1 id="heading">
+             Test Avilable
+          </h1>
+          <a href="pnemonia"id="tests">Pnemonia checking</a><br>
+          <a href="skin_cancer"id="tests">Skin cancer Checking</a><br>
+          <a href="malaria"id="tests">Malaria checking</a><br>
+          <a href="kidney"id="tests">Kidney stone and Cancer checking</a><br>
+          <a href="tb"id="tests">Tuberculosis checking</a>
+
+        </div>
+  
+      </div>
+    </div>
+
+
+{% endblock content %}

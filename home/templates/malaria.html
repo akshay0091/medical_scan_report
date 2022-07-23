@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/malaria.css' %}" />
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="content">
+    <div class="testback">
+        <div class="main">
+            <div class="text_input">
+                <h1 id="heading">
+                    Malaria Checking
+                </h1>
+                <div class="container text-center text p-5">
+                    <p id="test">You have to uplod the <a href="https://en.wikipedia.org/wiki/Blood_test">Blood test
+                        </a>cell image
+                        Malaria parasites can be identified by examining under the microscope a drop of the patient's
+                        blood, spread out as a “blood smear” on a microscope slide. Prior to examination, the specimen
+                        is stained (most often with the Giemsa stain) to give the parasites a distinctive appearance.
+                    </p>
+                    <br>
+                    <p id="test">
+                        Other related procedures that may be used to diagnose Malaria problems include <a
+                            href="https://en.wikipedia.org/wiki/Polymerase_chain_reaction">Polymerase Chain Reaction
+                            (PCR)</a> ,
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/17582968/"> IFA (Indirect Immunofluorescence Assay)</a>
+
+
+                    </p>
+                    <div class="text-center p-5">
+                        <form action="{% url 'maleria_result' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.image }}
+                            {{ from.as_p }}
+                        <label for="formFileLg" class="form-label" id="up_text">Upload the Cell image file</label>
+                        <input class="form-control form-control-lg" id="formFileLg" name="maleriafile" type="file">
+                        <button type="submit" value="Upload">Submit</button>
+
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {% endblock content %}

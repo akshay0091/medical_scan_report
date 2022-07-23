@@ -1,0 +1,22 @@
+.testback{
+    background: url('/static/image/ai-background.jpeg');
+    height: 700px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#heading{
+    font-size: 70px;
+    color: rgb(243, 16, 16);
+    padding-left: 30%;
+    padding-top: 70px;
+    font-weight: bold;
+
+}
+#tests{
+    font-size: 50px;
+    color: rgb(7, 10, 7);
+    font-weight: bold;
+    padding-left: 20%;
+    backface-visibility: hidden;
+
+}

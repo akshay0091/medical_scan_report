@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/pnemonia.css' %}" />
+
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="content">
+    <div class="testback">
+        <div class="main">
+            <div class="text_input">
+                <h1 id="heading">
+                    Tuberculosis Checking
+                </h1>
+                <div class="container text-center text p-5">
+                    <p id="test">You have to uplod the <a href="https://en.wikipedia.org/wiki/X-ray">X
+                            -ray</a>
+                        .X-ray of the chest are useful in the examination of Tuberculosis.
+
+                        Tuberculosis (TB) is a potentially serious infectious disease that mainly affects the lungs. The
+                        bacteria that cause tuberculosis are spread from person to person through tiny droplets released
+                        into the air via coughs and sneezes.
+                    </p>
+                    <br>
+                    <p id="test">
+                        There are two kinds of tests used to detect TB bacteria in the body: the <a
+                            href="https://www.healthywa.wa.gov.au/Articles/S_T/Tuberculin-Skin-Test">TB skin test
+                            (TST)</a> and
+                        <a
+                            href="https://www.lalpathlabs.com/blog/what-is-a-tuberculosis-test/#:~:text=Tuberculosis%20blood%20test%20can%20be,and%20T-Spot%20tuberculosis%20test.">TB
+                            blood tests</a> . A positive TB skin test or TB blood test only tells that a person has been
+                        infected with TB bacteria.
+
+                    </p>
+                    <div class="text-center p-5">
+                        <form action="{% url 'tb_result' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.image }}
+                            {{ from.as_p }}
+                            <label for="formFileLg" class="form-label" id="up_text">Upload the X-ray file</label>
+                            <input class="form-control form-control-lg" id="formFileLg" name="tbfile" type="file">
+                            <button type="submit" value="Upload">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    {% endblock content %}
