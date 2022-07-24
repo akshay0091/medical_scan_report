@@ -1,1 +1,3 @@
-web: gunicorn medical.wsgi
+web: gunicorn medical.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
