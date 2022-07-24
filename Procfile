@@ -1,1 +1,1 @@
-web: gunicorn medical.wsgi
+web: gunicorn medical.wsgi --log-file -
