@@ -1,1 +1,1 @@
-web: gunicorn medical.wsgi --log-file -
+web: gunicorn --chdir medical_checkup medical_checkup.wsgi
