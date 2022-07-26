@@ -1,1 +1,1 @@
-web: gunicorn --chdir medical.wsgi
+web: gunicorn medical.wsgi
