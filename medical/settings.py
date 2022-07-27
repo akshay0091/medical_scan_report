@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2s)t*+(c2!as@$ar)a%z28uzp9*n-eil27_1hfcy)z%-#_p+ti
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['medical-checkup1.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['medical-scan-checkup.herokuapp.com','127.0.0.1']
 
 
 # Application definition
